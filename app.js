@@ -34,8 +34,14 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
+//case insensitive allows user to input rock ROCK rOcK
+function playerCaseSensitive(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 
 const playerSelection = prompt('Enter rock paper or scissors');
 const computerSelection = getComputerChoice();
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+console.log(`Computer choice: ${computerSelection}`);
+console.log(`Player choice: ${playerCaseSensitive(playerSelection)}`);
+console.log(playRound(playerCaseSensitive(playerSelection), computerSelection));
