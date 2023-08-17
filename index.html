@@ -7,31 +7,43 @@
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="rps.css">
     <script src="https://kit.fontawesome.com/ca12f6a0b5.js" crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+   
 </head>
 
 <body>
+    
     <div class="rps-container">
-        <h2>Rock Paper Scissors</h2>
+        <div class="title-container">
+            <h2>Rock Paper Scissors</h2>
+        </div>
+        
 
         <div>
             <h3 id="score">0:0</h3>
-            <p id="message"></p>
+            <p id="score-message"></p>
         </div>
 
         <div id="rps-options">
-            <button><i class="fa-regular fa-hand-back-fist"></i></button>
-            <button><i class="fa-regular fa-hand"></i></button>
-            <button><i class="fa-regular fa-hand-scissors"></i></button>
+            <button id="rock"><i class="fa-regular fa-hand-back-fist"></i></button>
+            <button id="paper"><i class="fa-regular fa-hand"></i></button>
+            <button id="scissors"><i class="fa-regular fa-hand-scissors"></i></button>
         </div>
 
-        <div>
+        <div id="message-container">
             <h4>Player</h4>
+            <div id="p-message"></div>
             <h4>Computer</h4>
+            <div id="c-message"></div>
+            <br><br>
         </div>
 
+        <div id="winner-result"></div>
 
     </div>
+
+    <!--Scripts-->
+    <script src="app.js"></script>
+
     
 </body>
 </html>

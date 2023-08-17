@@ -1,0 +1,17 @@
+* {
+    background-color: beige;
+}
+
+.rps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#message-container {
+    display: flex;
+    flex-direction: column;
+    
+}
+
