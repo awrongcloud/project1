@@ -74,14 +74,19 @@ function result(){
 }
 
 
+
 rock.addEventListener("click", () => {
     playerSelection = "Rock";
     let computerSelection = getComputerChoice();
 
-    //display player and computer choice
-    pmessage.textContent = `${playerSelection}`;
-    cmessage.textContent = `${computerSelection}`;
+    let ptask = document.createElement('div');
+    let ctask = document.createElement('div');
 
+    ptask.innerText = `${playerSelection}`;
+    ctask.innerText = `${computerSelection}`;
+    
+    pmessage.appendChild(ptask);
+    cmessage.appendChild(ctask);
     
     playRound(playerSelection,computerSelection);
     score.textContent = `${pScore} : ${cScore}`;
@@ -93,9 +98,15 @@ paper.addEventListener("click", () => {
     playerSelection = "Paper";
     let computerSelection = getComputerChoice();
     
+    
+    let ptask = document.createElement('div');
+    let ctask = document.createElement('div');
 
-    pmessage.textContent = `${playerSelection}`;
-    cmessage.textContent = `${computerSelection}`;
+    ptask.innerText = `${playerSelection}`;
+    ctask.innerText = `${computerSelection}`;
+    
+    pmessage.appendChild(ptask);
+    cmessage.appendChild(ctask);
     
     playRound(playerSelection,computerSelection);
     score.textContent = `${pScore} : ${cScore}`;
@@ -106,14 +117,21 @@ scissors.addEventListener("click", () => {
     playerSelection = "Scissors";
     let computerSelection = getComputerChoice();
     
-
-    pmessage.textContent = `${playerSelection}`;
-    cmessage.textContent = `${computerSelection}`;
    
+    let ptask = document.createElement('div');
+    let ctask = document.createElement('div');
+
+    ptask.innerText = `${playerSelection}`;
+    ctask.innerText = `${computerSelection}`;
+    
+    pmessage.appendChild(ptask);
+    cmessage.appendChild(ctask);
+    
     playRound(playerSelection,computerSelection);
     score.textContent = `${pScore} : ${cScore}`;
     result();
 })
+
 
 
 

@@ -12,6 +12,26 @@
 #message-container {
     display: flex;
     flex-direction: column;
+    width: 200px;
+    align-items: center;
+}
+
+.pc {
+    display:flex;
+    gap: 50px;
     
 }
 
+.pc-message {
+    display:flex;
+    flex-direction: row;
+    height: 200px;
+    gap: 50px;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
