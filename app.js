@@ -14,6 +14,8 @@ let cmessage = document.querySelector('#c-message');
 let winner = document.querySelector('#winner-result');
 let scoreMessage = document.querySelector('#score-message');
 
+let restart_btn = document.querySelector('#restart-btn');
+
 //return Computer choice
 function getComputerChoice() {
     let choice = Math.floor(Math.random()*3);
@@ -57,23 +59,35 @@ function playRound(playerSelection, computerSelection){
 }
 
 //return winner/loser stops game after player/computer wins 5 rounds
-function result(){
+let result = function(){
     if (pScore === 5){
         winner.textContent = (`Player wins with score of ${pScore}`);
       
         rock.setAttribute('disabled',1);
         paper.setAttribute('disabled',1);
         scissors.setAttribute('disabled',1);
+        document.getElementById("restart-btn").style.display = "block";
+
     } else if (cScore === 5) {
         winner.textContent = (`Computer wins with score of ${cScore}`);
     
         rock.setAttribute('disabled',1);
         paper.setAttribute('disabled',1);
         scissors.setAttribute('disabled',1);
+        document.getElementById("restart-btn").style.display = "block";
     }
+    
 }
 
-
+restart_btn.addEventListener("click", () => {
+    //reset score
+    pScore = 0;
+    cScore = 0;
+    score.textContent = `${pScore} : ${cScore}`;
+    pmessage.textContent = " ";
+    cmessage.textContent = " ";
+    scoreMessage.textContent = " ";
+})
 
 rock.addEventListener("click", () => {
     playerSelection = "Rock";

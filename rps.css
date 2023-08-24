@@ -12,7 +12,6 @@
 #message-container {
     display: flex;
     flex-direction: column;
-    width: 200px;
     align-items: center;
 }
 
@@ -25,7 +24,6 @@
 .pc-message {
     display:flex;
     flex-direction: row;
-    height: 200px;
     gap: 50px;
 }
 
@@ -34,4 +32,25 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+}
+
+button:hover {
+    background-color: blanchedalmond;
+    color: black;
+}
+
+#winner-result {
+ font-weight: bold;  
+ font-size: 17px; 
+}
+
+#restart-btn {
+    width: 80px;
+    margin-top: 20px;
+    display: none;
 }
