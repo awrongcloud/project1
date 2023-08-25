@@ -80,8 +80,8 @@ let result = function(){
     }   
 }
 
-restart_btn.addEventListener("click", () => {
-    //reset score
+//resets entire game
+let restart = () => {
     pScore = 0;
     cScore = 0;
     score.textContent = `${pScore} : ${cScore}`;
@@ -91,9 +91,10 @@ restart_btn.addEventListener("click", () => {
     winner.textContent = " ";
     document.querySelector('#restart-btn').style.display = "none";
     document.querySelector("#rock").disabled=false;
-  document.querySelector("#paper").disabled=false;
-  document.querySelector("#scissors").disabled=false;
-})
+    document.querySelector("#paper").disabled=false;
+    document.querySelector("#scissors").disabled=false;
+}
+restart_btn.addEventListener("click", restart);
 
 
 rock.addEventListener("click", () => {
