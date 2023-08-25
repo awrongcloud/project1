@@ -2,7 +2,7 @@
 let pScore = 0;
 let cScore = 0;
 
-//Variables
+//DOM Variables
 let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
 let scissors = document.querySelector("#scissors");
@@ -94,12 +94,10 @@ let restart = () => {
     document.querySelector("#paper").disabled=false;
     document.querySelector("#scissors").disabled=false;
 }
-restart_btn.addEventListener("click", restart);
 
-
-rock.addEventListener("click", () => {
-    playerSelection = "Rock";
-    let computerSelection = getComputerChoice();
+let game = (choice) => {
+  let playerSelection = choice;
+  let computerSelection = getComputerChoice();
 
     let ptask = document.createElement('div');
     let ctask = document.createElement('div');
@@ -113,46 +111,19 @@ rock.addEventListener("click", () => {
     playRound(playerSelection,computerSelection);
     score.textContent = `${pScore} : ${cScore}`;
     result();
+}
+
+//EventListeners
+restart_btn.addEventListener("click", reset_fx);
+
+rock.addEventListener("click", () => {game("Rock")});
+
+paper.addEventListener("click", () => {game("Paper")});
+
+scissors.addEventListener("click", () => {game("Scissors")});
    
-})
 
-paper.addEventListener("click", () => {
-    playerSelection = "Paper";
-    let computerSelection = getComputerChoice();
-    
-    
-    let ptask = document.createElement('div');
-    let ctask = document.createElement('div');
 
-    ptask.innerText = `${playerSelection}`;
-    ctask.innerText = `${computerSelection}`;
-    
-    pmessage.appendChild(ptask);
-    cmessage.appendChild(ctask);
-    
-    playRound(playerSelection,computerSelection);
-    score.textContent = `${pScore} : ${cScore}`;
-   result();
-})
-
-scissors.addEventListener("click", () => {
-    playerSelection = "Scissors";
-    let computerSelection = getComputerChoice();
-    
-   
-    let ptask = document.createElement('div');
-    let ctask = document.createElement('div');
-
-    ptask.innerText = `${playerSelection}`;
-    ctask.innerText = `${computerSelection}`;
-    
-    pmessage.appendChild(ptask);
-    cmessage.appendChild(ctask);
-    
-    playRound(playerSelection,computerSelection);
-    score.textContent = `${pScore} : ${cScore}`;
-    result();
-})
 
 
 
