@@ -66,17 +66,18 @@ let result = function(){
         rock.setAttribute('disabled',1);
         paper.setAttribute('disabled',1);
         scissors.setAttribute('disabled',1);
-        document.getElementById("restart-btn").style.display = "block";
-
+        
+        document.querySelector('#restart-btn').style.display = "block";
+      
     } else if (cScore === 5) {
         winner.textContent = (`Computer wins with score of ${cScore}`);
     
         rock.setAttribute('disabled',1);
         paper.setAttribute('disabled',1);
         scissors.setAttribute('disabled',1);
-        document.getElementById("restart-btn").style.display = "block";
-    }
-    
+      
+        document.querySelector('#restart-btn').style.display = "block";
+    }   
 }
 
 restart_btn.addEventListener("click", () => {
@@ -87,7 +88,13 @@ restart_btn.addEventListener("click", () => {
     pmessage.textContent = " ";
     cmessage.textContent = " ";
     scoreMessage.textContent = " ";
+    winner.textContent = " ";
+    document.querySelector('#restart-btn').style.display = "none";
+    document.querySelector("#rock").disabled=false;
+  document.querySelector("#paper").disabled=false;
+  document.querySelector("#scissors").disabled=false;
 })
+
 
 rock.addEventListener("click", () => {
     playerSelection = "Rock";
