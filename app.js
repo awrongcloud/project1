@@ -59,7 +59,7 @@ function playRound(playerSelection, computerSelection){
 }
 
 //return winner/loser stops game after player/computer wins 5 rounds
-let result = function(){
+function result() {
     if (pScore === 5){
         winner.textContent = (`Player wins with score of ${pScore}`);
       
@@ -81,7 +81,7 @@ let result = function(){
 }
 
 //resets entire game
-let restart = () => {
+function restart () {
     pScore = 0;
     cScore = 0;
     score.textContent = `${pScore} : ${cScore}`;
@@ -95,7 +95,7 @@ let restart = () => {
     document.querySelector("#scissors").disabled=false;
 }
 
-let game = (choice) => {
+function game(choice) {
   let playerSelection = choice;
   let computerSelection = getComputerChoice();
 
@@ -114,7 +114,7 @@ let game = (choice) => {
 }
 
 //EventListeners
-restart_btn.addEventListener("click", reset_fx);
+restart_btn.addEventListener("click", restart);
 
 rock.addEventListener("click", () => {game("Rock")});
 
